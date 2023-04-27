@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="oculus-thumbstick-controls.js"></script>
+    <script src="oculus-thumbstick.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="floor" src="texture6.jpg">
+            <img id="sky2" src="sky2.jpg">
+            <!-- <a-asset-item id="villagee" src="family_home/scene.gltf"> -->
+            </a-asset-item>
+            <a-asset-item id="home" src="family_lakewood_estates/scene.gltf"></a-asset-item>
+
+    </a-assets>
+    <a-plane material="color: #00AA00;
+    shader:flat"
+    rotation="-90 0 0"
+    scale="1000 1000 1"
+    ></a-plane>
+    <a-sky src="#sky2" position="200 -50 0" rotation="360"></a-sky>
+    <a-entity gltf-model="#home" position="0 1.187 -10" scale="4 4 4"></a-entity>
+    <a-entity id="rig" position="0 5 80">
+        <a-camera position="0 7 5" user-height="1.9"></a-camera>
+        <a-entity oculus-touch-controls="hand: left" oculus-thumbstick></a-entity>
+        <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
+    </a-entity>
+    </a-scene>
+</body>
+</html>
